@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bad Code Smell</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <nav class="sidebar"></nav>
+
+        <div class="content">
+            <h1>Let's Learn About Code Smells</h1>
+            <br>
+            <div>
+                <h2>Apa itu Code Smells?</h2>
+                <br>
+                <p>
+                    Code Smells adalah pola atau karakteristik dalam kode yang menunjukkan masalah desain atau implementasi. 
+                    Code Smells dapat menyebabkan masalah di masa depan atau membuat kode sulit dipahami, dikelola, atau diperbaiki.
+                </p>
+            </div>
+            <br>
+            <div>
+                <h2>Kategori Code Smells</h2>
+                <br>
+                <p>
+                    Code Smells umumnya dibagi menjadi 5 kategori yakni:
+                    <ul>
+                        <li>
+                            <p>The Bloaters</p>
+                            <p>
+                                Semua code smells dalam kelompok ini menunjukkan bahwa ada bagian dari kode yang terlalu besar. 
+                                Contoh code smells dengan tipe ini meliputi Large Class, Long Method, Long Parameter List, Primitive 
+                                Obsession, dan Data Clumps.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Change Preventers</p>
+                            <p>
+                                Semua code smells dalam kelompok ini menyebabkan kita menghadapi masalah tertentu ketika kita 
+                                ingin menambahkan atau memperbarui fitur tertentu. Contoh code smells dengan tipe ini meliputi 
+                                Divergent Change, Parallel Inheritance Hierarchies, dan Shotgun Surgery.
+                            </p>
+                        </li>
+                        <li>
+                            <p>The Couplers</p>
+                            <p>
+                                Semua code smells dalam kelompok ini menunjukkan bahwa ada ketergantungan yang tinggi antara 
+                                beberapa class (high coupling). Contoh code smells dengan tipe ini meliputi Feature Envy, Inappropiate 
+                                Intimacy, Message Chains, dan Middle Man.
+                            </p>
+                        </li>
+                        <li>
+                            <p>Object-Orientation Abusers</p>
+                            <p>
+                                Semua code smells dalam kelompok ini menunjukkan bahwa struktur kode tidak mengikuti prinsip Object Oriented 
+                                Programming (OOP) yang tepat. Contoh code smells dengan tipe ini adalah Switch Statements, Temporary Field, 
+                                Refused Bequest, dan Alternative Classes with Different Interface.
+                            </p>
+                        </li>
+                        <li>
+                            <p>The Dispensables</p>
+                            <p>
+                                Semua code smells dalam kelompok ini menunjukkan bahwa ada beberapa bagian dari kode yang kurang berguna 
+                                dan dapat dihapus. Contoh code smells dengan tipe ini adalah Comments, Data Class, Lazy Class, Dead 
+                                Code, Duplicate Code, dan Speculative Generality.
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+            <br>
+            <div>
+                <p>
+                    Pada website ini, saya akan secara khusus menjelaskan lebih detail mengenai 2 kategori code smells yakni Change 
+                    Preventer dan The Dispensables.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

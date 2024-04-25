@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bad Code Smell</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <nav class="sidebar"></nav>
+
+        <div class="content">
+            <h1>Parallel Inheritance Hierarchies</h1>
+            <br>
+            <h2>Definisi</h2>
+            <br>
+            <p>
+                Parallel Inheritance Hierarchies adalah sebuah code smell yang terjadi ketika setiap perubahan di satu hierarki 
+                akan menyebabkan terciptanya perubahan di hierarki lainnya. Hal ini tentu akan menyebabkan struktur code menjadi 
+                sulit dipelihara. 
+                Misalkan kita memiliki hierarki A yang memiliki subclass A1 dan A2. Kemudian kita 
+                juga memiliki hierarki B yang memiliki subclass B1 dan B2. Ketika kita ingin menambah subclass A3, maka kita juga 
+                perlu membuat class B3 dikarenakan hubungan yang terikat antara kedua hierarki.
+            </p>
+            <br>
+            <h2>Contoh</h2>
+            <div class="code-example">
+                <div class="code-before">
+                    <br>
+                    <h3>Before</h3>
+                    <br>
+                    <p>Code:</p>
+                    <p>Shape3D.java</p>
+                    <img src="Asset/Parallel Inheritance Hierarchies/Before/Shape3D.png" alt="">
+                    <p>Cuboid.java</p>
+                    <img src="Asset/Parallel Inheritance Hierarchies/Before/Cuboid.png" alt="">
+                    <p>Pyramid.java</p>
+                    <img src="Asset/Parallel Inheritance Hierarchies/Before/Pyramid.png" alt="">
+                    <p>Volume.java</p>
+                    <img src="Asset/Parallel Inheritance Hierarchies/Before/Volume.png" alt="">
+                    <p>CuboidVolumeCalculate.java</p>
+                    <img src="Asset/Parallel Inheritance Hierarchies/Before/CuboidVolumeCalculate.png" alt="">
+                    <p>PyramidVolumeCalculate.java</p>
+                    <img src="Asset/Parallel Inheritance Hierarchies/Before/PyramidVolumeCalculate.png" alt="">
+                    <br><br>
+                    <p>Alasan:</p>
+                    <p>
+                        Setiap pertambahan kelas pada hierarki 'Shape3D' akan menyebabkan perlunya ada pertambahan pada hierarki 
+                        'Volume' karena keterikatan antara kedua hierarki tersebut. Misalkan kita akan menambah bentuk 3D baru seperti 
+                        'Prism', maka kita juga perlu menambah kelas 'PrismVolumeCalculate' untuk mengkalkulasi volume dari bentuk 
+                        tersebut.
+                    </p>
+                </div>
+
+                <div class="code-after">
+                    <br>
+                    <h3>After</h3>
+                    <br>
+                    <p>Code:</p>
+                    <p>Shape3D.java</p>
+                    <img src="Asset/Parallel Inheritance Hierarchies/After/Shape3D.png" alt="">
+                    <p>Cuboid.java</p>
+                    <img src="Asset/Parallel Inheritance Hierarchies/After/Cuboid.png" alt="">
+                    <p>Pyramid.java</p>
+                    <img src="Asset/Parallel Inheritance Hierarchies/After/Pyramid.png" alt="">
+                    <p>Volume.java</p>
+                    <img src="Asset/Parallel Inheritance Hierarchies/After/Volume.png" alt="">
+                    <br><br>
+                    <p>Hasil Perbaikan:</p>
+                    <p>
+                        Maka dari itu, kita perlu menghilangkan keterikatan antara kedua hierarki dengan cara melakukan mekanisme 
+                        'implements' class 'Volume' di class 'Shape3D'. Hal ini dilakukan supaya kita dapat meng-implement metode 
+                        'volume()' di subclass dari 'Shape3D' untuk melakukan perhitungan volume secara langsung.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

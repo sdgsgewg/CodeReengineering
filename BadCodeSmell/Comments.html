@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bad Code Smell</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <nav class="sidebar"></nav>
+
+        <div class="content">
+            <h1>Comments</h1>
+            <br>
+            <h2>Definisi</h2>
+            <br>
+            <p>
+                Comments adalah sebuah code smell yang terjadi ketika ada terlalu banyak teks yang ditambahkan ke dalam bagian 
+                code tertentu di dalam suatu program. Hal ini bertujuan untuk memberikan penjelasan tentang apa yang dilakukan 
+                oleh bagian code tersebut. 
+                Namun, penggunaan comments yang berlebihan dapat menyebabkan code smell karena akan membingungkan pembaca code 
+                dan menandakan code yang dibuat tidak self-explanatory. 
+                Self-explanatory berarti bahwa code yang dibuat harus bisa menjelaskan fungsionalitas dengan jelas kepada pembaca 
+                code.
+            </p>
+            <br>
+            <h2>Contoh</h2>
+            <div class="code-example">
+                <div class="code-before">
+                    <br>
+                    <h3>Before</h3>
+                    <br>
+                    <p>Code:</p>
+                    <p>Calculator.java</p>
+                    <img src="Asset/Comments/Before/Calculator.png" alt="">
+                    <br><br>
+                    <p>Alasan:</p>
+                    <p>
+                        Setiap method memiliki comments yang menjelaskan fungsi dari method tersebut. 
+                        Namun, sebagian besar comments hanya menjelaskan hal-hal yang sudah jelas dilakukan oleh suatu code, 
+                        seperti pada method add, subtract, multiply, dan divide. 
+                        Hal ini yang membuat comments menjadi redundan dan sebenarnya tidak penting.
+                    </p>
+                </div>
+
+                <div class="code-after">
+                    <br>
+                    <h3>After</h3>
+                    <br>
+                    <p>Code:</p>
+                    <p>Calculator.java</p>
+                    <img src="Asset/Comments/After/Calculator.png" alt="">
+                    <br><br>
+                    <p>Hasil Perbaikan:</p>
+                    <p>
+                        Maka dari itu, seluruh comments perlu dihapus karena code tersebut sudah cukup jelas 
+                        dalam menggambarkan apa yang dilakukan oleh setiap metode. Hal ini membuat code menjadi lebih bersih 
+                        dan mudah dibaca tanpa bergantung pada comments yang berlebihan. 
+                        Comments sebaiknya digunakan untuk memberikan dokumentasi tambahan atau 
+                        untuk menjelaskan algoritma yang kompleks.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
