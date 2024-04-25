@@ -1,4 +1,4 @@
-Tugas Sesi 7-10 Code Reengineering
+Tugas Code Reengineering
 
 Membahas mengenai bad code smell:
 1. Change Preventer
