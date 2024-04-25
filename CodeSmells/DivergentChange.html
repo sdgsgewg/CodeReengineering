@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Smells</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <nav class="sidebar"></nav>
+
+        <div class="content">
+            <h1>Divergent Change</h1>
+            <br>
+            <h2>Definisi</h2>
+            <br>
+            <p>
+                Divergent Change adalah sebuah code smell yang terjadi ketika sebuah kelas harus diubah berulang kali karena 
+                beberapa alasan, seperti perubahan kebutuhan bisnis, alur logika, atau terdapat fitur baru yang ingin ditambahkan, 
+                Hal ini juga dapat terjadi ketika suatu kelas memiliki tanggung jawab yang tidak konsisten atau mencoba melakukan 
+                terlalu banyak tugas.
+            </p>
+            <br>
+            <h2>Contoh</h2>
+            <div class="code-example">
+                <div class="code-before">
+                    <br>
+                    <h3>Before</h3>
+                    <br>
+                    <p>Code:</p>
+                    <p>Calculator.java</p>
+                    <img src="Asset/Divergent Change/Before/Calculator.png" alt="">
+                    <br><br>
+                    <p>Alasan:</p>
+                    <p>
+                        Class 'Calculator' bertanggung jawab untuk melakukan operasi matematika seperti penambahan, pengurangan, perkalian, dan 
+                        pembagian. 
+                        Selain melakukan operasi matematika, class 'Calculator' juga bertanggung jawab untuk mencatat atau logging setiap operasi 
+                        matematika yang dilakukan. 
+                        Hal ini akan menghasilkan divergent change karena jika ada perubahan terkait cara logging dilakukan atau perluasan 
+                        fungsi logging, maka class 'Calculator' harus diubah. 
+                        Sebaliknya, jika ada perubahan terkait operasi matematika, hal itu juga akan mempengaruhi class 'Calculator'.
+                    </p>
+                </div>
+
+                <div class="code-after">
+                    <br>
+                    <h3>After</h3>
+                    <br>
+                    <p>Code:</p>
+                    <p>Calculator.java</p>
+                    <img src="Asset/Divergent Change/After/Calculator.png" alt="">
+                    <p>Logger.java</p>
+                    <img src="Asset/Divergent Change/After/Logger.png" alt="">
+                    <br><br>
+                    <p>Hasil Perbaikan:</p>
+                    <p>
+                        Maka dari itu, kita perlu memisahkan dua tanggung jawab tersebut dengan menggunakan teknik 'Extract Class'. 
+                        Kita akan membuat class baru bernama 'Logger' yang bertanggung jawab untuk mencatat atau logging setiap 
+                        operasi matematika yang dilakukan. Kemudian kita dapat menggunakan teknik 'Move Method' untuk memindahkan method 
+                        'logOperation()' ke class ini.
+                        Sehingga saat ini class 'Calculator' hanya bertanggung jawab terhadap operasi matematika. 
+                        Perubahan ini membuat class 'Calculator' memiliki fokus yang lebih jelas dan mengurangi dampak divergent change. 
+                        Begitu juga jika ada perubahan logika pada logging, hanya class 'Logger' yang perlu diubah.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>

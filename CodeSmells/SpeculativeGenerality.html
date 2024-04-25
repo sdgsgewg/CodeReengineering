@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Smells</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <nav class="sidebar"></nav>
+
+        <div class="content">
+            <h1>Speculative Generality</h1>
+            <br>
+            <h2>Definisi</h2>
+            <br>
+            <p>
+                Speculative Generality adalah sebuah code smell yang terjadi ketika sebuah class, method, atau fitur ditambahkan ke dalam 
+                code tanpa ada kebutuhan konkret saat code itu dibuat dengan harapan bahwa suatu saat akan diperlukan, namun 
+                pada kenyataannya tidak pernah digunakan.
+            </p>
+            <br>
+            <h2>Contoh</h2>
+            <div class="code-example">
+                <div class="code-before">
+                    <br>
+                    <h3>Before</h3>
+                    <br>
+                    <p>Code:</p>
+                    <p>PaymentProcess.java</p>
+                    <img src="Asset/SpeculativeGenerality/Before/PaymentProcess.png" alt="">
+                    <br><br>
+                    <p>Alasan:</p>
+                    <p>
+                        Ada beberapa metode pembayaran yang dibuat seperti 'processCreditCardPayment()', 'processPayPalPayment()', 
+                        'processBankTransfer()', dan 'processBitcoinPayment()' dengan harapan bahwa nantinya ada beberapa metode 
+                        pembayaran yang dapat digunakan di dalam sistem. Namun pada kenyataannya, hanya metode pembayaran dengan 
+                        menggunakan credit card yang digunakan seperti yang ditampilkan di 'main()'.
+                    </p>
+                </div>
+
+                <div class="code-after">
+                    <br>
+                    <h3>After</h3>
+                    <br>
+                    <p>Code:</p>
+                    <p>User.java</p>
+                    <img src="Asset/SpeculativeGenerality/After/PaymentProcess.png" alt="">
+                    <br><br>
+                    <p>Hasil Perbaikan:</p>
+                    <p>
+                        Maka dari itu, kita perlu menghapus metode yang tidak terpakai seperti 'processPayPalPayment()', 
+                        'processBankTransfer()', dan 'processBitcoinPayment()'.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
