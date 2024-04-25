@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Smells</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <nav class="sidebar"></nav>
+
+        <div class="content">
+            <h1>Lazy Class</h1>
+            <br>
+            <h2>Definisi</h2>
+            <br>
+            <p>
+                Lazy Class adalah sebuah code smell yang terjadi ketika ada satu class yang berisi fungsi atau metode yang sangat 
+                sedikit sehingga hal ini menyebabkan kepentingan atau esensi class yang dipertanyakan.
+            </p>
+            <br>
+            <h2>Contoh</h2>
+            <div class="code-example">
+                <div class="code-before">
+                    <br>
+                    <h3>Before</h3>
+                    <br>
+                    <p>Code:</p>
+                    <p>UserValidator.java</p>
+                    <img src="Asset/LazyClass/Before/UserValidator.png" alt="">
+                    <p>User.java</p>
+                    <img src="Asset/LazyClass/Before/User.png" alt="">
+                    <br><br>
+                    <p>Alasan:</p>
+                    <p>
+                        Class 'UserValidator' hanya berisi function 'validateName()' yang berfungsi untuk mengvalidasi apakah 
+                        nama dari user setidaknya memiliki 2 kata atau tidak.
+                    </p>
+                </div>
+
+                <div class="code-after">
+                    <br>
+                    <h3>After</h3>
+                    <br>
+                    <p>Code:</p>
+                    <p>User.java</p>
+                    <img src="Asset/LazyClass/After/User.png" alt="">
+                    <br><br>
+                    <p>Hasil Perbaikan:</p>
+                    <p>
+                        Maka dari itu, kita dapat menggunakan teknik 'Move Method' untuk memindahkan method 'validateName()' ke 
+                        class 'User' dan melakukan perubahan nama method menjadi 'isNameValid()' supaya lebih sesuai dengan class 
+                        'User'. Setelah itu, kita dapat menghapus class 'UserValidator'.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

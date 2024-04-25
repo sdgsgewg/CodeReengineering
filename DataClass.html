@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Smells</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <nav class="sidebar"></nav>
+
+        <div class="content">
+            <h1>Data Class</h1>
+            <br>
+            <h2>Definisi</h2>
+            <br>
+            <p>
+                Data Class adalah sebuah code smell yang terjadi ketika ada satu class yang hanya berisi data field dan fungsi 
+                setter getter saja atau dapat disebut sebagai dumb data holders. Sebuah class yang baik idealnya berisi data field, 
+                constructor, fungsi setter getter (opsional), dan method yang diperlukan. Maka dari itu, biasanya class seperti 
+                ini dapat dipertimbangkan untuk dihapus saja dan digabung dengan class lain yang terkait.
+            </p>
+            <br>
+            <h2>Contoh</h2>
+            <div class="code-example">
+                <div class="code-before">
+                    <br>
+                    <h3>Before</h3>
+                    <br>
+                    <p>Code:</p>
+                    <p>ContactInfo.java</p>
+                    <img src="Asset/DataClass/Before/ContactInfo.png" alt="">
+                    <p>User.java</p>
+                    <img src="Asset/DataClass/Before/User.png" alt="">
+                    <br><br>
+                    <p>Alasan:</p>
+                    <p>
+                        Class 'ContactInfo' hanya berisi data field dan fungsi setter getter saja tanpa memiliki method khusus yang 
+                        dapat dilakukan dalam class. Sehingga alangkah baiknya untuk memindahkan data dari class ini ke class 'User'.
+                    </p>
+                </div>
+
+                <div class="code-after">
+                    <br>
+                    <h3>After</h3>
+                    <br>
+                    <p>Code:</p>
+                    <p>User.java</p>
+                    <img src="Asset/DataClass/After/User.png" alt="">
+                    <br><br>
+                    <p>Hasil Perbaikan:</p>
+                    <p>
+                        Maka dari itu, kita perlu memindahkan data field milk class 'ContactInfo' ke class 'User'. Setelah itu, kita 
+                        dapat menghapus class 'ContactInfo'.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
